@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+    <link rel="icon" type="image/x-icon" href="https://tinyurl.com/yt7f6mkc">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <main>
+        <section>
+            <!-- Mobile Nav Button -->
+            <button class="mobile-nav-btn" id="openNav">
+                <span class="burger"></span>
+
+                <span>Install Microsoft 365 or Office</span>
+            </button>
+
+
+            <!-- Mobile Bottom Sheet Navigation -->
+            <div class="mobile-modal" id="mobileModal">
+                <div class="panel bottom-sheet">
+                    <div class="drag-handle"></div>
+                    <h3 class="nav-header">Install Microsoft 365 or Office</h3>
+                    <ul>
+                        <li><a href="#" class="nav-link active" data-section="install">Install Microsoft 365 or
+                                Office</a>
+                        </li>
+                        <li><a href="#" class="nav-link" data-section="install2021">Office 2021, 2019, 2016</a></li>
+                        <li><a href="#" class="nav-link" data-section="business">What business product do I have?</a>
+                        </li>
+                        <li><a href="#" class="nav-link" data-section="addUsers">Add users</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Desktop + Mobile Content Layout -->
+            <div class="layout">
+
+                <!-- Desktop Sidebar -->
+                <aside class="desktop sidebar">
+                    <h3 class="nav-header">Install Microsoft 365 or Office</h3>
+                    <ul>
+                        <li><a href="#" class="nav-link active" data-section="install">Install Microsoft 365 or
+                                Office</a>
+                        </li>
+                        <li><a href="#" class="nav-link" data-section="install2021">Office 2021, 2019, 2016</a></li>
+                        <!-- <li><a href="#" class="nav-link" data-section="upgrade">Upgrade to Latest Version</a></li> -->
+                        <li><a href="#" class="nav-link" data-section="business">What business product do I have?</a>
+                        </li>
+                        <li><a href="#" class="nav-link" data-section="addUsers">Add Users</a></li>
+
+                    </ul>
+                </aside>
+
+                <!-- Main Content -->
+                <main class="content" id="contentArea">
+                </main>
+            </div>
+        </section>
+
+
+        <script>
+            const contentArea = document.getElementById("contentArea");
+
+            // Content map
+            const CONTENT = {
+                install: `
+                <h2 class="page-title">Download, install, or reinstall Microsoft 365 or Office 2024 on a PC or Mac</h2>
+
+    <h3>Sign in to download and install Microsoft 365 or Office</h3>
+
+    <p>Before you begin, make sure your PC or Mac meets the system requirements.</p>
+
+    <!-- Install Tabs -->
+    <div class="install-tabs">
+        <button class="tab-btn active" data-target="pc">Install on PC</button>
+        <button class="tab-btn" data-target="mac">Install on Mac</button>
+    </div>
+
+    <!-- Tab Contents -->
+    <div class="tab-content" id="pc">
+        <ol>
+            <li>Go to m365.cloud.microsoft/apps and if you're not already signed in, select Sign in.</li>
+            <li>Sign in with the account you associated with this version of Microsoft 365. This account can be a Microsoft account, or a work or school account.</li>
+            <li>
+                After signing in, follow the steps that match the type of account you signed in with.
+                <img src="install-on-windows.jpg" alt="" />
+            </li>
+            <li>This completes the download of Microsoft 365 to your device. To complete the installation and activation steps, follow the prompts in the following install and activation sections.</li>
+        </ol>
+        <br>
+        <div>
+            <h3>Install the apps</h3>
+            <ol>
+                <li>Depending on your browser, select Run (in Microsoft Edge or Internet Explorer), Setup (in Chrome), or Save File (in Firefox).</li>
+                <li>If you see the User Account Control prompt that says, Do you want to allow this app to make changes to your device? select Yes. The install begins.</li>
+                <li>Your install is finished when you see the phrase, "You're all set! Office is installed now" and an animation plays to show you where to find Microsoft 365  applications on your computer. Select Close.</li>
+            </ol>    
+        </div>
+        <br>
+        <div>
+            <h3>Activate Microsoft 365 or Office</h3>
+            <ol>
+                <li>To open an app, select the Start button (lower-left corner of your screen) and type the name of an app, like Word.</li>
+                <li>To open the app, select its icon in the search results.</li>
+                <li>When the app opens, accept the license agreement. Microsoft 365 or Office is activated and ready to use.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="tab-content" id="mac" style="display:none;">
+        <ol>
+            <li>Go to your Office account and sign in.</li>
+            <li>Sign in with the account you associated with this version of Microsoft 365 or Office. This account can be a Microsoft account, or work or school account. <a href="https://support.microsoft.com/en-us/office/i-forgot-the-account-i-use-with-microsoft-365-eba0b4a2-c0ae-472c-99f6-bc63ee2425a8?wt.mc_id=SCL_InstallOffice_Home#">I forgot the account I use with Office.</a></li>
+            <li>After signing in, follow the steps that match the type of account you signed in with.
+                <img src="install-on-mac.jpg" alt="" />
+                <p>
+                    The 64-bit version is installed by default unless Microsoft 365 or Office detects you already have a 32-bit version of Microsoft 365 or Office (or a stand-alone app such as Project or Visio) installed. In this case, the 32-bit version of Microsoft 365 or Office will be installed instead.    
+                </p>
+                <p>
+                    To change from a 32-bit version to a 64-bit version or vice versa, you need to uninstall Microsoft 365 first (including any stand-alone Microsoft 365 apps you have such as Project of Visio). Once the uninstall is complete, sign in again to <a href="m365.cloud.microsoft/apps">m365.cloud.microsoft/apps</a> and select Install apps. From the Install apps window select the language and version you want (64 or 32-bit), and then select <strong>Install</strong>.
+                </p>
+            </li>
+            <li>This completes the download of Microsoft 365 to your device. To complete the installation and activation steps, follow the prompts in the following install and activation sections.</li>
+        </ol>
+        
+        <br>
+
+        <div>
+            <h3>Install Microsoft 365 or Office 2024 on a Mac</h3>
+            <ol>
+                <li>
+                    Once the download has completed, open Finder, go to <strong>Downloads</strong>, and double-click <strong>Microsoft Office installer.pkg</strong> file (the name might vary slightly).
+                    <br><br>
+                    <img src="install-mac-step1.jpg" alt="" style="width: 80%"/>
+                </li>
+                <li>
+                    On the first installation screen, select Continue to begin the installation process.
+                    <br><br>
+                    <img src="install-mac-step2.jpg" alt="" style="width: 80%"/>
+                </li>
+                <li>Review the software license agreement, and then click Continue.</li>
+                <li>Select Agree to agree to the terms of the software license agreement.</li>
+                <li>Choose how you want to install Microsoft 365 and click Continue.</li>
+                <li>Review the disk space requirements or change your install location, and then click Install.</li>
+                <li>
+                    Enter your Mac login password, if prompted, and then click Install Software. (This is the password that you use to log in to your Mac.)
+                    <br><br>
+                    <img src="install-mac-step7.jpg" alt="" style="width: 80%"/>
+                </li>
+                <li>
+                    The software begins to install. Click Close when the installation is finished.
+                    <br><br>
+                    <img src="install-mac-step8.jpg" alt="" style="width: 80%"/>    
+                </li>
+            </ol>    
+        </div>
+
+        <div>
+            <h3>Activate Microsoft 365 or Office 2024 on a Mac</h3>
+            <ol>
+                <li>
+                    Click the Launchpad icon in the Dock to display all of your apps.
+                    <br><br>
+                    <img src="activate-mac-step1.jpg" alt="" style="width: auto"/>
+                </li>
+                <li>
+                    Click the Microsoft Word icon (or another Microsoft 365 or Office icon) in the Launchpad.
+                    <br><br>
+                    <img src="activate-mac-step2.jpg" alt="" style="width: 80%"/>
+                </li>
+                <li>
+                    The What is New window opens automatically when you launch Word. Click Get Started to start activating.
+                    <br><br>
+                    <img src="activate-mac-step3.jpg" alt="" style="width: 80%"/>
+                </li>
+
+            </ol>
+        </div>
+    </div>
+
+`,
+
+                install2021: `
+    <h2 class="page-title">Download and install or reinstall Office 2021, Office 2019, or Office 2016</h2>
+
+    <p>If this is the first time you're installing Office you may have some setup steps to do first. Expand the learn more section below.</p>
+    <br>
+    <p>However, if you're reinstalling Office, and you've already redeemed a product key and have an account associated with Office, then go to the section sign in to download Office.​​​​​​​</p>
+
+    <br>
+
+    <div>
+        <h3>Sign in to download and install Microsoft 365 or Office</h3>
+        <ol>
+            <li>Go to your <a href="https://account.microsoft.com/">Microsoft account dashboard</a>, and if you're not already signed in, select Sign in.</li>
+            <li>Sign in with the Microsoft account you associated with this version of Office.</li>
+            <li>From the Overview page, select Office apps and on that page, find the Office product you want to install and select Install.</li>
+        </ol>
+        <br>
+        <p>To install Office in a different language, or to install the 64-bit version, use the dropdown to find more options. Choose the language and bit version you want, and then select Install.</p>
+    </div>
+    
+    <!-- Install Tabs -->
+    <div class="install-tabs">
+        <button class="tab-btn active" data-target="pc">Office 2016 - 2021 on a PC</button>
+        <button class="tab-btn" data-target="mac">Office for Mac 2019 - 2021</button>
+    </div>
+
+    <!-- Tab Contents -->
+    <div class="tab-content" id="pc">
+        <h3>Install Office 2021, 2019, or 2016 on a PC</h3>
+        <p>Remember a one-time purchase version of Office is <a href="https://www.microsoft.com/Useterms/">licensed for one install only.</a></p>
+        <br>    
+        <ol>
+            <li>
+                <p>Depending on your browser, select Open file (in Edge or Internet Explorer), Setup (in Chrome), or Save File (in Firefox).</p>
+                <br>
+                <p>If you see the User Account Control prompt that says, Do you want to allow this app to make changes to your device? select Yes.</p>                        
+                <br>
+                <p>The install begins.</p>
+            </li>
+            <li>
+                <p>Your install is finished when you see the phrase, "You're all set! Office is installed now" and an animation plays to show you where to find Office applications on your computer. Select Close.</p>
+                <br>
+                <p>Follow the instructions in the window to find your Office apps. For example depending on your version of Windows, select Start and then scroll to find the app you want to open such as Excel or Word, or type the name of the app in the search box.</p>
+            </li>
+        </ol>
+        <br>
+        <div>
+            <h3>Activate office</h3>
+            <ol>
+                <li>
+                    <p>Start using an Office application right away by opening any app such as Word or Excel. <a href="https://support.microsoft.com/en-us/office/can-t-find-office-applications-in-windows-10-907ce545-6ae8-459b-8d9d-de6764a635d6?wt.mc_id=SCL_InstallOffice_Home#">Can't find Office after installing?</a></p>
+                    <br>
+                    <p>In most cases, Office is activated once you start an application and after you agree to the License terms by selecting Accept.</p>    
+                </li>
+                <li>Office might activate automatically. However, depending on your product you might see the Microsoft Office Activation Wizard. If so, follow the prompts to activate Office.</li>
+            </ol>    
+        </div>
+    </div>
+
+    <div class="tab-content" id="mac" style="display:none;">
+        <div>
+            <h3>Install Office on a Mac</h3>
+            <ol>
+                <li>Once the download has completed, open Finder, go to <strong>Downloads</strong>, and double-click the installer package.</li>
+                <li>On the first installation screen, select <strong>Continue</strong> to begin the installation process.</li>
+                <li>Review the software license agreement, and then click <strong>Continue</strong>.</li>
+                <li>Select <strong>Agree</strong> to agree to the terms of the software license agreement.</li>
+                <li>Choose how you want to install Office and click <strong>Continue</strong>.</li>
+                <li>Review the disk space requirements or change your install location, and then click <strong>Install</strong>.</li>
+                <li>Enter your Mac login password, if prompted, and then click <strong>Install Software</strong>. (This is the password that you use to log in to your Mac.)</li>
+                <li>The software begins to install. Click <strong>Close</strong> when the installation is finished. If an update is available, select <strong>Update</strong> and follow the prompts.</li>
+            </ol>
+        </div>
+        
+        <br>
+
+        <div>
+            <h3>Launch an Office app and start the activation process</h3>
+            <ol>
+                <li>
+                    Click the <strong>Launchpad</strong> icon in the Dock to display all of your apps.
+                    <br><br>
+                    <img src="launch-app-step1.jpg" alt="" style="width: auto"/>
+                </li>
+                <li>
+                    Click the <strong>Microsoft Word</strong> icon in the Launchpad.
+                    <br><br>
+                    <img src="launch-app-step2.jpg" alt="" style="width: 80%"/>
+                </li>
+                <li>
+                    The <strong>What's New</strong> window opens automatically when you launch Word. Click <strong>Get Started</strong> to start activating. 
+                    <br><br>
+                    <img src="launch-app-step3.jpg" alt="" style="width: 80%"/>
+                </li>
+            </ol>    
+        </div>
+
+        <br>
+
+        <div>
+            <h3>Installation Notes</h3>
+            <div>
+                <p>How do I pin the Office app icons to the dock?</p>
+                <ol>
+                    <li>
+                        Go to <strong>Finder > Applications</strong> and open the Office app you want.
+                        <br><br>
+                        <img src="activate-mac-step1.jpg" alt="" style="width: auto"/>
+                    </li>
+                    <li>
+                        In the Dock, Control+click or right-click the app icon and choose <strong>Options > Keep in Dock</strong>.
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+`,
+
+                addUsers: `
+<h2 class="page-title">Add users and assign licenses in Microsoft 365</h2>
+<p>
+    Each person in your organization needs a user account before they can sign in and access Microsoft 365 for business. The easiest way to add user accounts is to add them one at a time in the Microsoft 365 admin center. After you complete this step, your users have Microsoft 365 licenses, sign-in credentials, and Microsoft 365 mailboxes.
+</p><br>
+
+<h3>Before you begin</h3>
+
+<p>You must be a license or user admin to add users and assign licenses.</p>
+
+<p class="important-note">
+    <strong>Important:</strong> See roles with the fewest permissions. Lower permissioned accounts help improve security for your organization. Global Administrator is a highly privileged role. Limit its use to emergency scenarios when you can't use an existing role. 
+</p>
+<br>
+<h3>Add a user in Microsoft 365</h3>
+<p>A lot of things can happen if you don't have the necessary Microsoft 365 for business product or license. Here are some examples:</p>
+<br>
+<img src="add-user-img1.jpg" alt="" style="width: 80%;"/><br>
+<p>Sign in to the Microsoft 365 admin center.</p>
+<ol>
+    <li>
+        Determine which admin center view you're currently using.
+        <ul>
+            <li>
+                <p>If the top of the Microsoft 365 admin center shows Dashboard view:</p>
+                <br>
+                <img src="add-user-img2.jpg" alt="" style="width: 80%;"/><br>
+            </li>
+            <li>Go to Users > Active users, and select Add a user.</li>
+            <li>If the top of the Microsoft 365 admin center shows Simplified view:
+                <br>
+                <img src="add-user-img3.jpg" alt="" style="width: 80%;"/><br>
+            </li>
+            <li>Select Add user. You can select either the Add user button at the top of the page or in the Users tab under Your organization.</li>
+        </ul>
+    </li>
+    <li>
+        <p>Set up the basics: fill in the basic user information, and then select Next.</p>
+        <ul>
+            <li>Name: Fill in the first name, family name, display name, and username.</li>
+            <li>Domains: Choose the domain for the user's account. For example, if their username is Jakob, and the domain is contoso.com, then they sign in with jakob@contoso.com.</li>
+            <li>Password settings:</li>
+            <li>By default, the option to Automatically create a password is selected. If you deselect this option, create a strong password for the user.</li>
+            <li>By default, the option to Require this user to change their password when they first sign in is selected. The user must change their password after 90 days.</li>
+        </ul>
+    </li>
+    <li>
+        <p>Assign product licenses: select the location and the appropriate license for the user.</p>
+        <ul>
+            <li>If you don't have any licenses available, you can still add a user and buy more licenses.</li>
+            <li>To limit the apps the user has a license for, expand Apps and select or deselect apps.</li>
+        </ul>
+    </li>
+    <li>
+        <p>Optional settings:</p>
+        <ul>
+            <li>If you want to make this user an admin, expand Roles.</li>
+            <li>To add more information about the user, expand Profile info.</li>
+        </ul>
+    </li>
+    <li>Review and finish: review your new user's settings, make further changes, and then select Finish adding.</li>
+    <li>
+        <p>On the completion page:</p>    
+        <ul>
+            <li>To give the user their password, select Print to create a hard copy or a PDF of their credentials that you can securely share with them.</li>
+            <li>To help them get started with Microsoft 365, send them an email that contains useful information.</li>
+            <li>Decide whether you want to save these user settings as a template.</li>
+            <li>Choose whether you want to add another user or Close the Add a user pane.</li>
+        </ul>
+    </li>
+</ol>
+
+<br>
+
+<h3>Add multiple users in Microsoft 365</h3>
+<p>
+    The following video shows how to add multiple users in Microsoft 365. It's one minute and 31 seconds long.
+</p>
+<br>
+<img src="add-user-img4.jpg" alt="" style="width: 80%;"/><br>
+<ol>
+    <li>Go to Users > Active users, and select Add multiple users.</li>
+    <li>
+        <p>Add list of users: choose whether to add users via rows on this page or upload a CSV with user information.</p>
+        <br>
+        <img src="add-user-img5.jpg" alt="" style="width: 80%;"/><br> 
+        <p>If you select I'd like to upload a CSV with user information:</p>
+        <br>
+        <ul style="padding-left: 20px;">
+            <li>Download the example CSV file. Make sure your spreadsheet includes the exact same column headings as the sample CSV file.</li>
+            <li>If you use the sample CSV file, open it in an editing tool like Microsoft Excel. Don't change the headings in the first row.</li>
+            <li>Make sure your spreadsheet includes values for the user name and display name for each user. For example, bob@contoso.com, Bob Kelly.</li>
+            <li>When you're done entering the users' information in your spreadsheet, save it in CSV format.</li>
+            <li>Select Browse, go to the location of your CSV file, and select Open.</li>
+        </ul>
+        <br>
+    </li>
+    <li>Licenses: select the location, licenses, and apps you want to assign to all new users.</li>
+    <li>Review and finish adding multiple users: Review your selections and select Add users.</li>   
+</ol>
+
+<br>
+
+<div>
+    <h3>Other methods to add multiple users</h3>
+    <p>You can also use any of the following methods to add multiple users at the same time:</p>
+    <ul style="padding-left: 20px;">
+        <li>Automate adding accounts and assigning licenses. Choose this method if you're already familiar with using Windows PowerShell cmdlets.</li>
+        <li>Synchronize with Active Directory. Use the Microsoft Entra Connect tool to replicate Active Directory user accounts in Microsoft 365. The sync only adds the user accounts. You must assign licenses to the synced users before they can use email and other apps for Microsoft 365.</li>
+        <li>Migrate email accounts from Exchange. When you migrate multiple mailboxes to Microsoft 365 by using either cutover, staged, or a hybrid Exchange method, you automatically add users as part of the migration. The migration only adds the user accounts. You must assign licenses to the users before they can use email and other apps for Microsoft 365. If you don't assign a license to a user, their mailbox is disabled after a grace period of 30 days.</li>
+    </ul>
+</div>
+
+<br>
+
+<div>
+    <h3>Create, edit, or delete custom user views</h3>
+    <p>
+        If you're a user management admin of a Microsoft 365 for business subscription, you can create up to 50 custom user views to view subsets of users. These views are in addition to the standard set of views. You can create, edit, or delete custom user views, and all admins can access the custom views you create.
+    </p>
+    <br>
+    <p>
+        When you create, edit, or delete a custom user view, all admins in your company see the changes in the Filter set list when they go to the Active users page.    
+    </p>
+</div>
+
+<div>
+    <p>The Filter set list displays standard user views by default. You can't edit or delete standard views. The standard filters include:</p>
+    <br>
+    <ul style="padding-left: 20px;">
+        <li>Billing admins</li>
+        <li>Global admins</li>
+        <li>Guest users</li>
+        <li>Helpdesk admins</li>
+        <li>Licensed users</li>
+        <li>Service support admins</li>
+        <li>Unlicensed users</li>
+        <li>User admins</li>
+        <li>Users with errors</li>
+    </ul>   
+    <br>
+    <p>A few things to note about standard views:</p>
+    <ul style="padding-left: 20px;">
+        <li>If there are more than 2,000 users in the list, some standard views display an unsorted list. To locate specific users in this list, use the search field.</li>
+        <li>If you didn't purchase Microsoft 365 from Microsoft, Billing admins don't appear in the standard views list.</li>
+    </ul>
+</div>
+
+<br>
+
+<div>
+    <h3>Custom Filters</h3>
+    <p>To create a custom filter, select New filter from the Filter set list. This action opens the Custom filter pane.</p>
+    <br>
+    <p>Create and edit your custom views in the Custom filter pane. If you select multiple filter options, you get results that contain users who match all the selected criteria. Many conditions are available for custom filters, such as:</p>
+    <br>
+    <ul style="padding-left: 20px;">
+        <li>Domain: If you have multiple domains for your organization, you can choose from the list of available domains.</li>
+        <li>Sign-in status: Choose users that are allowed or blocked.</li>
+        <li>Location: Choose a location from the list of countries/regions.</li>
+        <li>Assigned product license: Choose from the list of licenses that are available to your organization. Use this filter to show users who have the assigned license. Users might also have other licenses.</li>
+    </ul>
+    <br>
+    <p>You can also filter by other user profile details used in your organization, such as department, city, state or province, country/region, or job title.</p>
+    <br>
+    <p>You can select these Other conditions:</p>
+    <ul style="padding-left: 20px;">
+        <li>Synchronized users only: Select this option to show all users who are synced with the local Active Directory. This filter works whether you activate the users or not.</li>
+        <li>Users with errors: Select this option to show users who might have provisioning errors.</li>
+        <li>Unlicensed users: Select this option to find all the users who aren't assigned a license. The results for this view can also include users who have an Exchange mailbox but don't have a license. To track those users specifically, use the filter Unlicensed users with Exchange mailboxes or archives. The results for this view can also include users who have an Exchange archive, but don't have a license.</li>
+        <li>Unlicensed users with Exchange mailboxes or archives: Select this option to show user accounts that you created in Exchange Online and assigned an Exchange mailbox, but didn't assign a Microsoft 365 license. The results of this filter include users who have or who were assigned an Exchange archive.</li>
+    </ul>
+    <br><br>
+    <div class="important-note">
+        <p><strong>Note:</strong> Unlicensed users with Exchange mailboxes or archives: Select this option to show user accounts that you created in Exchange Online and assigned an Exchange mailbox, but didn't assign a Microsoft 365 license. The results of this filter include users who have or who were assigned an Exchange archive.</p>
+        <br>
+        <ul style="padding-left: 20px;">
+            <li>The mailbox was recently converted from shared to user and it has no license.</li>    
+            <li>The mailbox was recently migrated to Microsoft 365 but a license wasn't assigned.</li>    
+            <li>The mailbox was created using PowerShell, and a license wasn't assigned.</li>    
+            <li>A new mailbox is provisioned for the user, and that mailbox was created on-premises with the New-RemoteMailbox cmdlet.</li>
+        </ul>
+    </div>
+
+    <br>
+
+    <div>
+        <h3>Create a custom user view</h3>
+        <ol>
+            <li>In the admin center, go to Users > Active users.</li>
+            <li>On Active users, select Filter set and select New filter.</li>
+            <li>On the Custom filter pane, enter the name for your filter, choose the conditions for your custom filter, and then select Add.</li>
+        </ol>
+        <br>
+        <p>Your custom view is now included in the custom filters set.</p>
+    </div>
+    
+    <br>
+
+    <div>
+        <h3>Edit or delete a custom user view</h3>
+        <p>In the admin center, go to Users > Active users.</p>
+        <ol>
+            <li>On Active users, select Filter set, select Custom filters set, and switch to the filter you want to change. You can only edit custom filters.</li>
+            <li>Select Filter set again, then select Edit filter.</li>
+            <li>
+                On the Custom filter pane:
+                <ul style="padding-left: 20px;">
+                    <li>To change the filter: edit the conditions, then select Save.</li>
+                    <li>To delete the filter: select the ellipsis (...), then select Delete.</li>
+                </ul>
+
+            </li>
+        </ol>
+        <br>
+        <p class="important-note"><strong>Note:</strong> You can only edit custom filters.</p>
+        <br>
+    </div>
+
+    <br>
+
+    <div>
+        <h3>Next steps</h3>
+        <p>When you add a user, Microsoft sends an email notification. The email contains the person's user ID and password so they can sign in to Microsoft 365. Use your normal process for communicating new passwords.</p>
+    </div>
+</div>
+
+`,
+
+                business: `
+<h2 class="page-title">What Microsoft 365 business product or license do I have?</h2>
+<p>
+    There are several Microsoft 365 for business plans that you or your organization can choose from when you sign up for one of Microsoft's cloud services. After your organization signs up for Microsoft 365, the admin can assign different Microsoft 365 licenses to each user account. The different licenses include different services, such as SharePoint in Microsoft 365 and Skype for Business Online. See the different Office 365 for business plans.
+</p><br>
+
+<p class="important-note">
+    <strong>Note:</strong> This topic is for Microsoft 365 for business. If you have an Office for home product and you're looking for where to install Microsoft 365, see Install or reinstall Office on a PC or Mac. 
+</p><br>
+
+<p>
+    If you experience a problem in Microsoft 365 – for example, you can't use or install Microsoft 365 on a device – it could be that you don't have the necessary license that enables that service or you don't have a subscription that includes the desktop applications which require installation. To fix this, you can contact your admin or IT staff for help, or if you're the admin, you can add the license yourself.
+</p>
+
+<br>
+
+<div>
+    <h3>What happens if I don't have a Microsoft 365 business product or license?</h3>
+    <p>A lot of things can happen if you don't have the necessary Microsoft 365 for business product or license. Here are some examples:</p>
+    <br>
+    <ul style="padding-left: 40px;">
+        <li>You try to use Word for the web, Excel for the web, or other Microsoft 365 for the web products and end up on the Microsoft 365 Settings page showing that you don't have the needed license.</li>
+        <li>You try to use Word for the web, Excel for the web, or other Microsoft 365 for the web products and end up on the Microsoft 365 Settings page showing that you don't have the needed license.</li>
+        <li>You try to sign in to OneDrive for work or school but can't access the site or get an error message.</li>
+        <li>You try to install Office for iPad from the Apple App store and get an error that your subscription is not entitled to use the app.</li>
+        <li>You try to use Office for iPad and find that Microsoft 365 apps like Word, Excel, and PowerPoint are in read-only or view mode.</li>
+    </ul>
+</div>
+
+<br>
+
+<div>
+    <h3>What can I do if I don't have the needed product or license?</h3>
+    <p>
+        If you don't have the product or license you need, contact your Microsoft 365 admin or IT staff for help in getting that license or finding an alternative.
+    </p><br>
+
+    <p>
+        Or, if you are the admin, you can add the license yourself. See <a href="https://docs.microsoft.com/office365/admin/subscriptions-and-billing/buy-licenses">Buy licenses for your Microsoft 365 for business subscription</a> and <a href="https://docs.microsoft.com/office365/admin/subscriptions-and-billing/assign-licenses-to-users">Assign licenses to users in Microsoft 365 for business</a>.
+    </p><br>
+
+    <p>
+        In some cases, an admin may need to add an Microsoft 365 plan or switch you to an Microsoft 365 plan that includes the services you need.
+    </p>
+</div>
+
+`,
+
+                uninstall: `
+<h2 class="page-title">Uninstalling Office</h2>
+<p>To remove Office from your device:</p>
+<ol>
+    <li>Go to Add or Remove Programs.</li>
+    <li>Select Microsoft Office.</li>
+    <li>Click Uninstall.</li>
+</ol>
+`
+            };
+
+            // Click handler for all nav links
+            document.querySelectorAll(".nav-link").forEach(link => {
+                link.addEventListener("click", (e) => {
+                    e.preventDefault();
+
+                    const section = link.dataset.section;
+
+                    document.querySelectorAll(".nav-link").forEach(item => item.classList.remove("active"));
+                    link.classList.add("active");
+
+                    // update content
+                    contentArea.innerHTML = CONTENT[section];
+
+                    // Reinitialize tab switcher after content load
+                    const newTabButtons = contentArea.querySelectorAll(".tab-btn");
+                    const newTabContents = contentArea.querySelectorAll(".tab-content");
+
+                    newTabButtons.forEach(btn => {
+                        btn.addEventListener("click", () => {
+                            newTabButtons.forEach(b => b.classList.remove("active"));
+                            btn.classList.add("active");
+
+                            newTabContents.forEach(content => content.style.display = "none");
+
+                            const target = btn.getAttribute("data-target");
+                            contentArea.querySelector("#" + target).style.display = "block";
+                        });
+                    });
+
+
+
+
+                    // close bottom sheet (mobile)
+                    if (window.innerWidth < 900) {
+                        sheet.classList.remove("open");
+                        setTimeout(() => modal.style.display = "none", 250);
+                    }
+                });
+            });
+
+            // Automatically load the first section
+            document.addEventListener("DOMContentLoaded", () => {
+                const firstLink = document.querySelector(".nav-link[data-section='install']");
+                if (firstLink) firstLink.click(); // loads default content and sets active state
+            });
+
+
+
+            // 
+            // 
+            // 
+            const btn = document.getElementById('openNav');
+            const modal = document.getElementById('mobileModal');
+            const sheet = document.querySelector('.bottom-sheet');
+
+            btn.addEventListener('click', () => {
+                modal.style.display = 'block';
+                requestAnimationFrame(() => {
+                    sheet.classList.add('open');
+                });
+            });
+
+            // Close when clicking outside bottom sheet
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    sheet.classList.remove('open');
+                    setTimeout(() => modal.style.display = 'none', 250);
+                }
+            });
+
+            // Tab switcher
+            // const tabButtons = document.querySelectorAll('.tab-btn');
+            // const tabContents = document.querySelectorAll('.tab-content');
+
+            // tabButtons.forEach(btn => {
+            //     btn.addEventListener('click', () => {
+            //         // Remove active class from all buttons
+            //         tabButtons.forEach(b => b.classList.remove('active'));
+            //         btn.classList.add('active');
+
+            //         // Hide all tab contents
+            //         tabContents.forEach(content => content.style.display = 'none');
+
+            //         // Show selected tab
+            //         const target = btn.getAttribute('data-target');
+            //         document.getElementById(target).style.display = 'block';
+            //     });
+            // });
+
+            // All nav links (desktop + mobile)
+            const navLinks = document.querySelectorAll('.nav-link');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    const target = link.dataset.section;
+
+                    // Remove active from all nav links
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    // Add active to **all links with the same data-section**
+                    navLinks.forEach(l => {
+                        if (l.dataset.section === target) {
+                            l.classList.add('active');
+                        }
+                    });
+
+                    // Hide all tab contents
+                    tabContents.forEach(c => c.style.display = 'none');
+                    // Show the selected content
+                    const targetContent = document.getElementById(target);
+                    if (targetContent) targetContent.style.display = 'block';
+                });
+            });
+
+            // Trigger initial active tab on page load
+            document.addEventListener('DOMContentLoaded', () => {
+                const initial = document.querySelector('.nav-link.active');
+                if (initial) initial.click();
+            });
+
+
+        </script>
+
+
+        <!-- 
+        <script>
+
+        </script> -->
+
+
+
+    </main>
+</body>
+
+</html>
+
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+        align-items: center;
+        font-family: "Poppins", serif;
+        color: #4c525c;
+    }
+
+    body,
+    main {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    main {
+        width: 100%;
+        display: flex;
+        max-width: 1400px;
+
+    }
+
+    h1 {
+        color: #006de2;
+        font-weight: 600;
+        font-size: clamp(1.2rem, 2.8vw, 1.5rem);
+        line-height: clamp(1.8rem, 4vw, 2.2rem);
+    }
+
+
+
+    #hero {
+        width: 100%;
+        position: relative;
+        background-color: #ecf5ff;
+        padding: clamp(3rem, 5vw, 5rem) clamp(1rem, 5vw, 5rem);
+        max-width: 1400px;
+        border-bottom-left-radius: 1.25rem;
+        border-bottom-right-radius: 1.25rem;
+    }
+
+
+    a {
+        text-decoration: none;
+    }
+
+
+    @media only screen and (width > 768px) {}
+
+    @media only screen and (width > 968px) {}
+
+    @media screen and (width > 1400px) {
+        body {
+            background-color: unset;
+        }
+
+        #hero {
+            margin-top: 2rem;
+            border-radius: 1.25rem;
+        }
+    }
+</style>

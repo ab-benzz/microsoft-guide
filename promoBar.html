@@ -1,0 +1,159 @@
+<div class="promo_content">
+    <!-- <span>Orders placed after 12 PM on Dec 23 are delivered by Dec 26.</span> -->
+    <div class="announcement-bar">
+        <p class="announcement-text">Paragraph one: Consistency builds real progress.</p>
+        <p class="announcement-text">Paragraph two: Clean structure leads to fewer bugs.</p>
+        <p class="announcement-text">Paragraph three: Depth over speed, always.</p>
+    </div>
+</div>
+
+<style>
+    .promo_content {
+        height: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        align-items: center;
+    }
+
+    .promo-item {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%) translateY(100%);
+        opacity: 0;
+        white-space: nowrap;
+        transition: transform 0.45s ease, opacity 0.45s ease;
+    }
+
+    .promo-item.visible {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+
+    .promo-item.up {
+        transform: translateX(-50%) translateY(-100%);
+        opacity: 0;
+    }
+
+    @media (max-width: 1023px) {
+        .promo_content {
+            height: 30px;
+        }
+    }
+
+
+    .promo_content .announcement-bar {
+        width: 100%;
+        text-align: center;
+        position: relative;
+        height: inherit;
+    }
+
+    .promo_content .announcement-text {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        opacity: 0;
+        animation: slideShow 6s infinite;
+    }
+
+    .promo_content .announcement-text:nth-child(1) {
+        animation-delay: 0s;
+    }
+
+    .promo_content .announcement-text:nth-child(2) {
+        animation-delay: 2s;
+    }
+
+    .promo_content .announcement-text:nth-child(3) {
+        animation-delay: 4s;
+    }
+
+    @keyframes slideShow {
+        0% {
+            opacity: 0;
+        }
+
+        10% {
+            opacity: 1;
+        }
+
+        30% {
+            opacity: 1;
+        }
+
+        40% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+</style>
+
+<!--
+<script type="text/simi-script">
+(function() {
+    const promoTexts = [
+        "We deliver within Metro Manila only.",
+        "Unlock more savings when you sign-up to become a member",
+        "₱1 shipping for Metro Manila orders worth P5,000 and above"
+    ];
+
+    let promoInterval = null;
+
+    function initPromoRotator() {
+        const a = document.getElementById("promo1");
+        const b = document.getElementById("promo2");
+
+        if (!a || !b) return;
+        if (promoInterval) return; // Already running
+
+        const items = [a, b];
+        let visibleIndex = 0;
+        let textIndex = 0;
+        const interval = 2000;
+
+        // Initialize first text
+        items[visibleIndex].textContent = promoTexts[textIndex];
+        items[visibleIndex].classList.add("visible");
+
+        function showNext() {
+            const nextTextIndex = (textIndex + 1) % promoTexts.length;
+            const currentEl = items[visibleIndex];
+            const nextEl = items[1 - visibleIndex];
+
+            nextEl.classList.remove("visible", "up");
+            nextEl.textContent = promoTexts[nextTextIndex];
+            void nextEl.offsetWidth;
+
+            currentEl.classList.remove("visible");
+            currentEl.classList.add("up");
+            nextEl.classList.add("visible");
+
+            currentEl.addEventListener("transitionend", function handler() {
+                currentEl.classList.remove("up");
+                currentEl.removeEventListener("transitionend", handler);
+            });
+
+            visibleIndex = 1 - visibleIndex;
+            textIndex = nextTextIndex;
+        }
+
+        promoInterval = setInterval(showNext, interval);
+    }
+
+    // Initialize on first load
+    initPromoRotator();
+
+    // SPA-friendly re-initialization
+    window.addEventListener('popstate', () => setTimeout(initPromoRotator, 200));
+    document.addEventListener('contentUpdated', () => setTimeout(initPromoRotator, 200));
+    document.addEventListener('page:loaded', () => setTimeout(initPromoRotator, 200));
+
+})();
+</script> -->
